@@ -18,7 +18,7 @@ class Gmail
     end
     meta.username = username =~ /@/ ? username : username + '@gmail.com'
     meta.password = password
-    @imap = Net::IMAP.new('imap.gmail.com',993,true,nil,false)
+    @imap = Net::IMAP.new('imap.gmail.com',443,true,nil,false)
     if block_given?
       login # This is here intentionally. Normally, we get auto logged-in when first needed.
       yield self
